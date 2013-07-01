@@ -10,12 +10,14 @@ var prefix = function () {
     }
 }();
 var screenSharing = navigator.userAgent.match('Chrome') && parseInt(navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26;
+var webAudio = !!window.webkitAudioContext;
 
 // export support flags and constructors
 module.exports = {
     support: !!PC,
     dataChannel: !!(PC && PC.prototype.createDataChannel),
     prefix: prefix,
+    webAudio: webAudio,
     screenSharing: screenSharing,
     SessionDescription: SessionDescription,
     IceCandidate: IceCandidate
