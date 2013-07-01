@@ -9,13 +9,14 @@ var prefix = function () {
         return 'webkit';
     }
 }();
+var screenSharing = navigator.userAgent.match('Chrome') && parseInt(navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26;
 
 // export support flags and constructors
 module.exports = {
-    PeerConnection: PC,
-    SessionDescription: SessionDescription,
-    IceCandidate: IceCandidate,
     support: !!PC,
     dataChannel: !!(PC && PC.prototype.createDataChannel),
-    prefix: prefix
+    prefix: prefix,
+    screenSharing: screenSharing,
+    SessionDescription: SessionDescription,
+    IceCandidate: IceCandidate
 };
