@@ -30,6 +30,7 @@ var webrtcSupport = require('webrtcsupport');
     PeerConnection: // constructor for creating a peer connection
     SessionDescription: // constructor for RTCSessionDescriptions
     IceCandidate: // constructor for ice candidate
+    prefix: // returns browser prefix (either moz or webkit for now)
 }
 
 ```
