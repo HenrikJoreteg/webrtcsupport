@@ -19,6 +19,7 @@ module.exports = {
     prefix: prefix,
     webAudio: webAudio,
     screenSharing: screenSharing,
+    PeerConnection: PC,
     SessionDescription: SessionDescription,
     IceCandidate: IceCandidate
 };
