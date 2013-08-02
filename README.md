@@ -28,7 +28,9 @@ var webrtcSupport = require('webrtcsupport');
     support: // boolean whether basic WebRTC support exists
     dataChannel: // boolean whether WebRTC data channels are supported
     prefix: // returns browser prefix (either moz or webkit for now)
-    webAudio: // boolean support for web audio API
+    screenSharing: // boolean guess of whether screensharing is supported,
+    webAudio: // A support for web audio API
+    AudioContext: // the audio context constructor from the web audio API
     PeerConnection: // constructor for creating a peer connection
     SessionDescription: // constructor for RTCSessionDescriptions
     IceCandidate: // constructor for ice candidate
