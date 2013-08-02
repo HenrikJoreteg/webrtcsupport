@@ -17,7 +17,7 @@ module.exports = {
     support: !!PC,
     dataChannel: !!(PC && PC.prototype && PC.prototype.createDataChannel),
     prefix: prefix,
-    webAudio: !!AudioContext.prototype.createMediaStreamSource,
+    webAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),
     screenSharing: screenSharing,
     AudioContext: AudioContext,
     PeerConnection: PC,

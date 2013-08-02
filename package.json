@@ -1,6 +1,6 @@
 {
   "name": "webrtcsupport",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Browser module to detect support for webrtc and extract proper constructors.",
   "main": "webrtcsupport.js",
   "repository": {
