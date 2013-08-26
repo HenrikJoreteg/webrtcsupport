@@ -38,6 +38,16 @@ var webrtcSupport = require('webrtcsupport');
 
 ```
 
+## Using with requireJS
+
+Use file webrtcsupport.require.js
+
+```js
+define(['webrtcsupport'], function(webrtcsupport) {
+    // webrtcsupport is the object from the previous section
+});
+```
+
 ## License
 
 MIT
