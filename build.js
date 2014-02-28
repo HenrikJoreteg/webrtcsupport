@@ -2,5 +2,5 @@ var bundle = require('browserify')(),
     fs = require('fs');
 
 
-bundle.add('./webrtcsupport');
+bundle.add('./index-browser');
 bundle.bundle({standalone: 'webrtcsupport'}).pipe(fs.createWriteStream('webrtcsupport.bundle.js'));

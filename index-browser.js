@@ -2,7 +2,7 @@
 var prefix;
 var isChrome = false;
 var isFirefox = false;
-var ua = navigator.userAgent.toLowerCase();
+var ua = window.navigator.userAgent.toLowerCase();
 
 // basic sniffing
 if (ua.indexOf('firefox') !== -1) {
@@ -17,7 +17,7 @@ var PC = window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
 var IceCandidate = window.mozRTCIceCandidate || window.RTCIceCandidate;
 var SessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
 var MediaStream = window.webkitMediaStream || window.MediaStream;
-var screenSharing = navigator.userAgent.match('Chrome') && parseInt(navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26;
+var screenSharing = window.navigator.userAgent.match('Chrome') && parseInt(window.navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26;
 var AudioContext = window.webkitAudioContext || window.AudioContext;
 
 
