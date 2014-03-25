@@ -32,5 +32,6 @@ module.exports = {
     AudioContext: AudioContext,
     PeerConnection: PC,
     SessionDescription: SessionDescription,
-    IceCandidate: IceCandidate
+    IceCandidate: IceCandidate,
+    MediaStream: MediaStream
 };
