@@ -11,5 +11,6 @@ module.exports = {
     AudioContext: undefined,
     PeerConnection: undefined,
     SessionDescription: undefined,
-    IceCandidate: undefined
+    IceCandidate: undefined,
+    MediaStream: undefined
 };
