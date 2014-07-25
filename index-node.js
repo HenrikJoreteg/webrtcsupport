@@ -1,15 +1,20 @@
-// Once node.js gains a robust module integrating WebRTC that can
-// be easily added to dependencies, we'll update this to expose it
+try {
+    var wrtc = require('wrtc');
+} catch (er) {
+    var wrtc = null;
+}
+
+var PC = wrtc && wrtc.RTCPeerConnection;
 
 module.exports = {
-    support: false,
+    support: !!PC,
+    dataChannel: !!(PC && PC.prototype && PC.prototype.createDataChannel),
     prefix: undefined,
-    dataChannel: false,
-    webAudio: false,
-    mediaStream: false,
+    webAudio: !!(wrtc.RTCAudioContext && wrtc.RTCAudioContext.prototype.createMediaStreamSource),
+    mediaStream: !!(wrtc.MediaStream && wrtc.MediaStream.prototype.removeTrack),
     screenSharing: false,
-    AudioContext: undefined,
-    PeerConnection: undefined,
-    SessionDescription: undefined,
-    IceCandidate: undefined
+    AudioContext: wrtc.RTCAudioContext,
+    PeerConnection: PC,
+    SessionDescription: wrtc.RTCSessionDescription,
+    IceCandidate: wrtc.RTCIceCandidate
 };

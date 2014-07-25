@@ -8,6 +8,9 @@
     "browserify": "2.22.0",
     "precommit-hook": "0.3.x"
   },
+  "optionalDependencies": {
+    "wrtc": "~0.0.22"
+  },
   "keywords": [
     "browser",
     "WebRTC"
