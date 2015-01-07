@@ -28,6 +28,7 @@ var webrtcSupport = require('webrtcsupport');
     support: // boolean whether basic WebRTC support exists
     supportRTCPeerConnection: // boolean whether basic support for RTCPeerConnection exists
     supportVp8: // boolean guess whether VP8 is supported by the browser
+    supportGetUserMedia: // boolean whether getUserMedia is supported by the browser
     dataChannel: // boolean whether WebRTC data channels are supported
     prefix: // returns browser prefix (either moz or webkit for now)
     screenSharing: // boolean guess of whether screensharing is supported,
@@ -36,6 +37,7 @@ var webrtcSupport = require('webrtcsupport');
     PeerConnection: // constructor for creating a peer connection
     SessionDescription: // constructor for RTCSessionDescriptions
     IceCandidate: // constructor for ice candidate
+    getUserMedia: // getUserMedia function
 }
 
 ```

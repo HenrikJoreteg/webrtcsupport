@@ -22,13 +22,14 @@ var screenSharing = window.location.protocol === 'https:' &&
      (window.navigator.userAgent.match('Firefox') && parseInt(window.navigator.userAgent.match(/Firefox\/(.*)/)[1], 10) >= 33));
 var AudioContext = window.webkitAudioContext || window.AudioContext;
 var supportVp8 = document.createElement('video').canPlayType('video/webm; codecs="vp8", vorbis') === "probably";
-
+var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia || navigator.mozGetUserMedia;
 
 // export support flags and constructors.prototype && PC
 module.exports = {
-    support: !!PC && supportVp8,
+    support: !!PC && supportVp8 && !!getUserMedia,
     supportRTCPeerConnection: !!PC,
     supportVp8: supportVp8,
+    supportGetUserMedia: !!getUserMedia,
     dataChannel: isChrome || isFirefox || (PC && PC.prototype && PC.prototype.createDataChannel),
     prefix: prefix,
     webAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),
@@ -38,5 +39,6 @@ module.exports = {
     PeerConnection: PC,
     SessionDescription: SessionDescription,
     IceCandidate: IceCandidate,
-    MediaStream: MediaStream
+    MediaStream: MediaStream,
+    getUserMedia: getUserMedia
 };

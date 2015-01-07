@@ -5,6 +5,7 @@ module.exports = {
     support: false,
     supportRTCPeerConnection: false,
     supportVp8: false,
+    supportGetUserMedia: false,
     prefix: undefined,
     dataChannel: false,
     webAudio: false,
@@ -14,5 +15,6 @@ module.exports = {
     PeerConnection: undefined,
     SessionDescription: undefined,
     IceCandidate: undefined,
-    MediaStream: undefined
+    MediaStream: undefined,
+    getUserMedia: undefined
 };
