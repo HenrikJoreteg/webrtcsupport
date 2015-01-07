@@ -3,6 +3,8 @@
 
 module.exports = {
     support: false,
+    supportRTCPeerConnection: false,
+    supportVp8: false,
     prefix: undefined,
     dataChannel: false,
     webAudio: false,

@@ -21,11 +21,14 @@ var screenSharing = window.location.protocol === 'https:' &&
     ((window.navigator.userAgent.match('Chrome') && parseInt(window.navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26) ||
      (window.navigator.userAgent.match('Firefox') && parseInt(window.navigator.userAgent.match(/Firefox\/(.*)/)[1], 10) >= 33));
 var AudioContext = window.webkitAudioContext || window.AudioContext;
+var supportVp8 = document.createElement('video').canPlayType('video/webm; codecs="vp8", vorbis') === "probably";
 
 
 // export support flags and constructors.prototype && PC
 module.exports = {
-    support: !!PC,
+    support: !!PC && supportVp8,
+    supportRTCPeerConnection: !!PC,
+    supportVp8: supportVp8,
     dataChannel: isChrome || isFirefox || (PC && PC.prototype && PC.prototype.createDataChannel),
     prefix: prefix,
     webAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),

@@ -26,6 +26,8 @@ var webrtcSupport = require('webrtcsupport');
 // it returns an object with the following:
 {
     support: // boolean whether basic WebRTC support exists
+    supportRTCPeerConnection: // boolean whether basic support for RTCPeerConnection exists
+    supportVp8: // boolean guess whether VP8 is supported by the browser
     dataChannel: // boolean whether WebRTC data channels are supported
     prefix: // returns browser prefix (either moz or webkit for now)
     screenSharing: // boolean guess of whether screensharing is supported,
