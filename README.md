@@ -29,10 +29,11 @@ var webrtcSupport = require('webrtcsupport');
     supportRTCPeerConnection: // boolean whether basic support for RTCPeerConnection exists
     supportVp8: // boolean guess whether VP8 is supported by the browser
     supportGetUserMedia: // boolean whether getUserMedia is supported by the browser
-    dataChannel: // boolean whether WebRTC data channels are supported
+    supportDataChannel: // boolean whether WebRTC data channels are supported
+    supportWebAudio: // boolean whether WebAudio API is supported
+    supportMediaStream: // boolean whether MediaStream is supported
+    supportScreenSharing: // boolean guess of whether screensharing is supported,
     prefix: // returns browser prefix (either moz or webkit for now)
-    screenSharing: // boolean guess of whether screensharing is supported,
-    webAudio: // A support for web audio API
     AudioContext: // the audio context constructor from the web audio API
     PeerConnection: // constructor for creating a peer connection
     SessionDescription: // constructor for RTCSessionDescriptions
