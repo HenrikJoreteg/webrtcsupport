@@ -15,19 +15,24 @@ var screenSharing = window.location.protocol === 'https:' &&
     ((window.navigator.userAgent.match('Chrome') && parseInt(window.navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26) ||
      (window.navigator.userAgent.match('Firefox') && parseInt(window.navigator.userAgent.match(/Firefox\/(.*)/)[1], 10) >= 33));
 var AudioContext = window.webkitAudioContext || window.AudioContext;
-
+var supportVp8 = document.createElement('video').canPlayType('video/webm; codecs="vp8", vorbis') === "probably";
+var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia || navigator.mozGetUserMedia;
 
 // export support flags and constructors.prototype && PC
 module.exports = {
-    support: !!PC,
-    dataChannel: PC && PC.prototype && PC.prototype.createDataChannel,
+    support: !!PC && supportVp8 && !!getUserMedia,
+    supportRTCPeerConnection: !!PC,
+    supportVp8: supportVp8,
+    supportGetUserMedia: !!getUserMedia,
+    supportDataChannel: isChrome || isFirefox || (PC && PC.prototype && PC.prototype.createDataChannel),
+    supportWebAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),
+    supportMediaStream: !!(MediaStream && MediaStream.prototype.removeTrack),
+    supportScreenSharing: !!screenSharing,
     prefix: prefix,
-    webAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),
-    mediaStream: !!(MediaStream && MediaStream.prototype.removeTrack),
-    screenSharing: !!screenSharing,
     AudioContext: AudioContext,
     PeerConnection: PC,
     SessionDescription: SessionDescription,
     IceCandidate: IceCandidate,
-    MediaStream: MediaStream
+    MediaStream: MediaStream,
+    getUserMedia: getUserMedia
 };

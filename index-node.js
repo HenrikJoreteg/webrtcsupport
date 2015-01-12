@@ -3,14 +3,18 @@
 
 module.exports = {
     support: false,
+    supportRTCPeerConnection: false,
+    supportVp8: false,
+    supportGetUserMedia: false,
+    supportDataChannel: false,
+    supportWebAudio: false,
+    supportMediaStream: false,
+    supportScreenSharing: false,
     prefix: undefined,
-    dataChannel: false,
-    webAudio: false,
-    mediaStream: false,
-    screenSharing: false,
     AudioContext: undefined,
     PeerConnection: undefined,
     SessionDescription: undefined,
     IceCandidate: undefined,
-    MediaStream: undefined
+    MediaStream: undefined,
+    getUserMedia: undefined
 };
