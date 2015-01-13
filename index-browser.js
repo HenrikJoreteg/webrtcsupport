@@ -1,16 +1,10 @@
 // created by @HenrikJoreteg
 var prefix;
-var isChrome = false;
-var isFirefox = false;
-var ua = window.navigator.userAgent.toLowerCase();
 
-// basic sniffing
-if (ua.indexOf('firefox') !== -1) {
+if (window.mozRTCPeerConnection || navigator.mozGetUserMedia) {
     prefix = 'moz';
-    isFirefox = true;
-} else if (ua.indexOf('chrome') !== -1) {
+} else if (window.webkitRTCPeerConnection || navigator.webkitGetUserMedia) {
     prefix = 'webkit';
-    isChrome = true;
 }
 
 var PC = window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
