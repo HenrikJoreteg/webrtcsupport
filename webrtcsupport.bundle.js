@@ -25,7 +25,7 @@ module.exports = {
     supportRTCPeerConnection: !!PC,
     supportVp8: supportVp8,
     supportGetUserMedia: !!getUserMedia,
-    supportDataChannel: PC && PC.prototype && PC.prototype.createDataChannel,
+    supportDataChannel: !!(PC && PC.prototype && PC.prototype.createDataChannel),
     supportWebAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),
     supportMediaStream: !!(MediaStream && MediaStream.prototype.removeTrack),
     supportScreenSharing: !!screenSharing,
