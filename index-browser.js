@@ -30,11 +30,6 @@ module.exports = {
     supportWebAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),
     supportMediaStream: !!(MediaStream && MediaStream.prototype.removeTrack),
     supportScreenSharing: !!screenSharing,
-    // old deprecated style. Dont use this anymore
-    dataChannel: !!(PC && PC.prototype && PC.prototype.createDataChannel),
-    webAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),
-    mediaStream: !!(MediaStream && MediaStream.prototype.removeTrack),
-    screenSharing: !!screenSharing,
     // constructors
     AudioContext: AudioContext,
     PeerConnection: PC,
