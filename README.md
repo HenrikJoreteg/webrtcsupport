@@ -8,7 +8,7 @@ Suitable for use with browserify/CommonJS on the client.
 
 If you're not using browserify or you want AMD support use `webrtcsupport.bundle.js`.
 
-This tiny module is used by [SimpleWebRTC](http://simplewebrtc.com), but obviously can be used by itself.
+This tiny module is used by [SimpleWebRTC](https://simplewebrtc.com), but obviously can be used by itself.
 
 ## Installing
 
@@ -38,6 +38,7 @@ var webrtcSupport = require('webrtcsupport');
     PeerConnection: // constructor for creating a peer connection
     SessionDescription: // constructor for RTCSessionDescriptions
     IceCandidate: // constructor for ice candidate
+    MediaStream: // constructor for MediaStreams
     getUserMedia: // getUserMedia function
 }
 
