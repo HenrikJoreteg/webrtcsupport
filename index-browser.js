@@ -15,7 +15,8 @@ var screenSharing = window.location.protocol === 'https:' &&
     ((window.navigator.userAgent.match('Chrome') && parseInt(window.navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26) ||
      (window.navigator.userAgent.match('Firefox') && parseInt(window.navigator.userAgent.match(/Firefox\/(.*)/)[1], 10) >= 33));
 var AudioContext = window.AudioContext || window.webkitAudioContext;
-var supportVp8 = document.createElement('video').canPlayType('video/webm; codecs="vp8", vorbis') === "probably";
+var videoEl = document.createElement('video');
+var supportVp8 = videoEl && videoEl.canPlayType('video/webm; codecs="vp8", vorbis') === "probably";
 var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia || navigator.mozGetUserMedia;
 
 // export support flags and constructors.prototype && PC
