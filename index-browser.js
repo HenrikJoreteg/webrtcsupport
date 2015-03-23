@@ -1,10 +1,13 @@
 // created by @HenrikJoreteg
 var prefix;
+var version;
 
 if (window.mozRTCPeerConnection || navigator.mozGetUserMedia) {
     prefix = 'moz';
+    version = parseInt(navigator.userAgent.match(/Firefox\/([0-9]+)\./)[1], 10);
 } else if (window.webkitRTCPeerConnection || navigator.webkitGetUserMedia) {
     prefix = 'webkit';
+    version = parseInt(navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)[2], 10);
 }
 
 var PC = window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
@@ -12,8 +15,8 @@ var IceCandidate = window.mozRTCIceCandidate || window.RTCIceCandidate;
 var SessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
 var MediaStream = window.webkitMediaStream || window.MediaStream;
 var screenSharing = window.location.protocol === 'https:' &&
-    ((window.navigator.userAgent.match('Chrome') && parseInt(window.navigator.userAgent.match(/Chrome\/(.*) /)[1], 10) >= 26) ||
-     (window.navigator.userAgent.match('Firefox') && parseInt(window.navigator.userAgent.match(/Firefox\/(.*)/)[1], 10) >= 33));
+    ((prefix === 'webkit' && version >= 26) ||
+     (prefix === 'moz' && version >= 33))
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 var videoEl = document.createElement('video');
 var supportVp8 = videoEl && videoEl.canPlayType && videoEl.canPlayType('video/webm; codecs="vp8", vorbis') === "probably";
@@ -22,6 +25,7 @@ var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || nav
 // export support flags and constructors.prototype && PC
 module.exports = {
     prefix: prefix,
+    browserVersion: version,
     support: !!PC && supportVp8 && !!getUserMedia,
     // new support style
     supportRTCPeerConnection: !!PC,
