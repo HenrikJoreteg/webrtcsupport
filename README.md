@@ -26,6 +26,7 @@ var webrtcSupport = require('webrtcsupport');
 // it returns an object with the following:
 {
     support: // boolean whether basic WebRTC support exists
+    browserVersion: // integer, browser version
     supportRTCPeerConnection: // boolean whether basic support for RTCPeerConnection exists
     supportVp8: // boolean guess whether VP8 is supported by the browser
     supportGetUserMedia: // boolean whether getUserMedia is supported by the browser
