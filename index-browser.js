@@ -25,7 +25,7 @@ var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || nav
 // export support flags and constructors.prototype && PC
 module.exports = {
     prefix: prefix,
-    version: version,
+    browserVersion: version,
     support: !!PC && supportVp8 && !!getUserMedia,
     // new support style
     supportRTCPeerConnection: !!PC,
