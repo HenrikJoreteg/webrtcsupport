@@ -7,7 +7,7 @@ if (window.mozRTCPeerConnection || navigator.mozGetUserMedia) {
     version = parseInt(navigator.userAgent.match(/Firefox\/([0-9]+)\./)[1], 10);
 } else if (window.webkitRTCPeerConnection || navigator.webkitGetUserMedia) {
     prefix = 'webkit';
-    version = navіgator.userAgent.match(/Chrom(e|ium)/) && parseInt(navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)[2], 10);
+    version = navigator.userAgent.match(/Chrom(e|ium)/) && parseInt(navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)[2], 10);
 }
 
 var PC = window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
