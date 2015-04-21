@@ -6,8 +6,6 @@ A tiny browser module for detecting support for WebRTC and also for extracting t
 
 Suitable for use with browserify/CommonJS on the client. 
 
-If you're not using browserify or you want AMD support use `webrtcsupport.bundle.js`.
-
 This tiny module is used by [SimpleWebRTC](https://simplewebrtc.com), but obviously can be used by itself.
 
 ## Installing
@@ -26,6 +24,7 @@ var webrtcSupport = require('webrtcsupport');
 // it returns an object with the following:
 {
     support: // boolean whether basic WebRTC support exists
+    browserVersion: // integer, browser version
     supportRTCPeerConnection: // boolean whether basic support for RTCPeerConnection exists
     supportVp8: // boolean guess whether VP8 is supported by the browser
     supportGetUserMedia: // boolean whether getUserMedia is supported by the browser
