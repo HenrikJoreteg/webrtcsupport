@@ -10,7 +10,7 @@ if (window.mozRTCPeerConnection || navigator.mozGetUserMedia) {
     version = navigator.userAgent.match(/Chrom(e|ium)/) && parseInt(navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)[2], 10);
 }
 
-var PC = window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+var PC = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
 var IceCandidate = window.mozRTCIceCandidate || window.RTCIceCandidate;
 var SessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
 var MediaStream = window.webkitMediaStream || window.MediaStream;
