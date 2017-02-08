@@ -16,7 +16,7 @@ var SessionDescription = window.mozRTCSessionDescription || window.RTCSessionDes
 var MediaStream = window.webkitMediaStream || window.MediaStream;
 var screenSharing = window.location.protocol === 'https:' &&
     ((prefix === 'webkit' && version >= 26) ||
-     (prefix === 'moz' && version >= 33))
+     (prefix === 'moz' && version >= 33));
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 var videoEl = document.createElement('video');
 var supportVp8 = videoEl && videoEl.canPlayType && videoEl.canPlayType('video/webm; codecs="vp8", vorbis') === "probably";
