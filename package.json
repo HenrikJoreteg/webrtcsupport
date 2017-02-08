@@ -4,9 +4,6 @@
   "version": "2.2.0",
   "author": "Henrik Joreteg <henrik@andyet.net>",
   "browser": "index-browser.js",
-  "dependencies": {
-    "@types/webrtc": "^0.0.21"
-  },
   "devDependencies": {
     "browserify": "2.22.0",
     "precommit-hook": "0.3.x"
