@@ -1,0 +1,23 @@
+{
+  "name": "webrtcsupport",
+  "description": "Browser module to detect support for webrtc and extract proper constructors.",
+  "main": "index-node.js",
+  "authors": [
+    "Henrik Joreteg <henrik@andyet.net>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "browser",
+    "WebRTC"
+  ],
+  "homepage": "https://github.com/Objectway/webrtcsupport",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "2.2.2"
+}
