@@ -17,7 +17,7 @@ var PC = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webki
 var IceCandidate = window.mozRTCIceCandidate || window.RTCIceCandidate;
 var SessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
 var MediaStream = window.webkitMediaStream || window.MediaStream;
-var screenSharing = window.location.protocol === 'https:' &&
+var screenSharing = (window.location.protocol === 'https:' || window.location.protocol === 'chrome-extension:')  &&
     ((prefix === 'webkit' && version >= 26) ||
      (prefix === 'moz' && version >= 33))
 var AudioContext = window.AudioContext || window.webkitAudioContext;
