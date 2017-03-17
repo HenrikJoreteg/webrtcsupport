@@ -11,5 +11,8 @@
     "trailing": true,
     "indent": 4,
     "latedef": true,
-    "newcap": true
+    "newcap": true,
+    "globals": {
+        "self": true
+    }
 }
