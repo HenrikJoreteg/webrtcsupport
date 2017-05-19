@@ -2,23 +2,23 @@
 var prefix;
 var version;
 
-if (window.mozRTCPeerConnection || navigator.mozGetUserMedia) {
+if (self.mozRTCPeerConnection || navigator.mozGetUserMedia) {
     prefix = 'moz';
     version = parseInt(navigator.userAgent.match(/Firefox\/([0-9]+)\./)[1], 10);
-} else if (window.webkitRTCPeerConnection || navigator.webkitGetUserMedia) {
+} else if (self.webkitRTCPeerConnection || navigator.webkitGetUserMedia) {
     prefix = 'webkit';
     version = navigator.userAgent.match(/Chrom(e|ium)/) && parseInt(navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)[2], 10);
 }
 
-var PC = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
-var IceCandidate = window.mozRTCIceCandidate || window.RTCIceCandidate;
-var SessionDescription = window.mozRTCSessionDescription || window.RTCSessionDescription;
-var MediaStream = window.webkitMediaStream || window.MediaStream;
-var screenSharing = window.location.protocol === 'https:' &&
+var PC = self.RTCPeerConnection || self.mozRTCPeerConnection || self.webkitRTCPeerConnection;
+var IceCandidate = self.mozRTCIceCandidate || self.RTCIceCandidate;
+var SessionDescription = self.mozRTCSessionDescription || self.RTCSessionDescription;
+var MediaStream = self.webkitMediaStream || self.MediaStream;
+var screenSharing = self.location.protocol === 'https:' &&
     ((prefix === 'webkit' && version >= 26) ||
-     (prefix === 'moz' && version >= 33))
-var AudioContext = window.AudioContext || window.webkitAudioContext;
-var videoEl = document.createElement('video');
+     (prefix === 'moz' && version >= 33));
+var AudioContext = self.AudioContext || self.webkitAudioContext;
+var videoEl = self.document && document.createElement('video');
 var supportVp8 = videoEl && videoEl.canPlayType && videoEl.canPlayType('video/webm; codecs="vp8", vorbis') === "probably";
 var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia || navigator.mozGetUserMedia;
 

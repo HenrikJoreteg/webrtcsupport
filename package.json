@@ -4,9 +4,13 @@
   "version": "2.2.0",
   "author": "Henrik Joreteg <henrik@andyet.net>",
   "browser": "index-browser.js",
+  "scripts": {
+    "lint": "standard"
+  },
   "devDependencies": {
-    "browserify": "2.22.0",
-    "precommit-hook": "0.3.x"
+    "browserify": "^14.3.0",
+    "precommit-hook": "^3.0.0",
+    "standard": "^10.0.2"
   },
   "keywords": [
     "browser",
