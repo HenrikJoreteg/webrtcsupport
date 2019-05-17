@@ -20,16 +20,18 @@ var screenSharing = window.location.protocol === 'https:' &&
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 var videoEl = document.createElement('video');
 var supportVp8 = videoEl && videoEl.canPlayType && videoEl.canPlayType('video/webm; codecs="vp8", vorbis') === "probably";
+var supportVp9 = videoEl && videoEl.canPlayType && videoEl.canPlayType('video/webm; codecs="vp9", vorbis') === "probably";
 var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia || navigator.mozGetUserMedia;
 
 // export support flags and constructors.prototype && PC
-module.exports = {
+module.exports = webrtcSupport = {
     prefix: prefix,
     browserVersion: version,
     support: !!PC && !!getUserMedia,
     // new support style
     supportRTCPeerConnection: !!PC,
     supportVp8: supportVp8,
+    supportVp9: supportVp9,
     supportGetUserMedia: !!getUserMedia,
     supportDataChannel: !!(PC && PC.prototype && PC.prototype.createDataChannel),
     supportWebAudio: !!(AudioContext && AudioContext.prototype.createMediaStreamSource),
